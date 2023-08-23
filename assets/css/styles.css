@@ -1,0 +1,133 @@
+body {
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-scrolled {
+  background-color: #E01713;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.navbar {
+  transition: all 0.5s;
+  background: rgba(255,255,255,0);
+  padding: 10px 0px;
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: #E01713 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+.navbar-scrolled {
+  background-color: #e01713;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    background-color: #e01713 !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1580px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1900px;
+  }
+}
+
+@media (max-width:991px) {
+  .container, .container-md, .container-sm {
+    max-width: 740px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 501px) {
+  .navbar-brand {
+    display: none;
+  }
+}
+
+.cover {
+  filter: brightness(0.65);
+}
+
+.next-meet {
+  background: #e01713;
+  font-family: montserrat;
+  font-weight: bold;
+  color: white;
+  padding: 35px;
+  font-size: 25px;
+}
+
+.welcome h1 {
+  font-family: montserrat;
+  font-weight: bold;
+  font-size: 60px;
+  color: #e01713;
+}
+
+.carousel .carousel-control-next, .carousel .carousel-control-prev {
+  visibility: hidden;
+}
+
+.carousel:hover .carousel-control-next, .carousel:hover .carousel-control-prev {
+  visibility: visible;
+}
+
+.welcome button {
+  font-family: montserrat;
+  font-weight: bold;
+  color: var(--bs-white);
+}
+
+.welcome button:hover {
+  color: lightgray;
+}
+
+footer {
+  background: #e01713;
+  font-family: montserrat;
+}
+
+.link-secondary, .text-muted {
+  color: rgb(255,255,255) !important;
+}
+
+.link-secondary:hover, .text-muted:hover {
+  color: #D9D7CF !important;
+}
+
+staff {
+  font-family: montserrat;
+}
+
+.staff h5 {
+  font-weight: bold;
+}
+
+.staff i {
+  color: #e01713;
+}
+
+footer {
+  margin-top: auto;
+}
+
