@@ -71,7 +71,7 @@ body {
 .next-meet {
   background: #e01713;
   font-family: montserrat;
-  font-weight: bold;
+  font-weight: 700;
   color: white;
   padding: 35px;
   font-size: 25px;
@@ -79,7 +79,7 @@ body {
 
 .welcome h1 {
   font-family: montserrat;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 60px;
   color: #e01713;
 }
