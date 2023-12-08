@@ -112,15 +112,19 @@
     Upcoming meet: Unknown or JS error</p>
       
     <script>
+        let overrideDay = 9;
+        
         let box = document.getElementById('nextMeet');
         var month = [ "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"];
         var date = new Date();
         if (date.getMonth() == 0) date.setMonth(1);
-        var nextMeet = new Date();
 
-        nextMeet = new Date(date.getFullYear(), date.getMonth(), 1);
-        nextMeet.setDate(7-nextMeet.getDay());
+        var nextMeet = new Date(date.getFullYear(), date.getMonth(), 1);
+        if(overrideDay>0)
+            nextMeet.setDate(overrideDay);
+        else
+            nextMeet.setDate(7-nextMeet.getDay());
 
         if(date > nextMeet)
             if(date.getMonth() <= 10)
@@ -129,9 +133,17 @@
                 date.setFullYear(nextMeet.getFullYear()+1, 1, date.getDate())
 
         nextMeet = new Date(date.getFullYear(), date.getMonth(), 1);
-        nextMeet.setDate(7-nextMeet.getDay());
-
-        box.innerHTML = `<p id="nextMeet" style="margin: 0px">Upcoming meet: ` + nextMeet.getDate() + `th ` + month[nextMeet.getMonth()] + `</p>`;
+        if(overrideDay>0)
+            nextMeet.setDate(overrideDay);
+        else
+            nextMeet.setDate(7-nextMeet.getDay());
+        
+        if(nextMeet.getDay()==1) var dayEnd = "st";
+        else if (nextMeet.getDay()==2) var dayEnd = "nd";
+        else if (nextMeet.getDay()==3) var dayEnd = "rd";
+        else var dayEnd = "th";
+        
+        box.innerHTML = `<p id="nextMeet" style="margin: 0px">Upcoming meet: ` + nextMeet.getDate() + dayEnd + ' ' + month[nextMeet.getMonth()] + `</p>`;
     </script>
   </div>
 </div>
