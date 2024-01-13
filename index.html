@@ -136,7 +136,7 @@
             else if(date.getMonth() == 12)
                 date.setFullYear(nextMeet.getFullYear()+1, 2, date.getDate());
         
-        nextMeet.setDate(date.getFullYear(), date.getMonth(), 1);
+        nextMeet.setFullYear(date.getFullYear(), date.getMonth(), 1);
     
         if(overrideDay>0)
             nextMeet.setDate(overrideDay);
