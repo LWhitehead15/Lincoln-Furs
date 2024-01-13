@@ -134,7 +134,7 @@
             if(date.getMonth() <= 10)
                 date.setMonth(nextMeet.getMonth()+1);
             else if(date.getMonth() == 12)
-                date.setFullYear(nextMeet.getFullYear()+1, 1, date.getDate());
+                date.setFullYear(nextMeet.getFullYear()+1, 2, date.getDate());
         
             nextMeet.setDate(date.getFullYear(), date.getMonth(), 1);
         
