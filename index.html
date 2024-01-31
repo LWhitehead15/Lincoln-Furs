@@ -122,13 +122,12 @@
         var date = new Date();
         
         console.log(date);
+        console.log(date.getMonth());
         
         if (date.getMonth() == 0)
             date.setMonth(1);
 
         console.log(date);
-
-        console.log(date.getMonth());
 
         // Set nextMeet day or override with value at top if necessary
         var nextMeet = new Date(date.getFullYear(), date.getMonth(), 1);
