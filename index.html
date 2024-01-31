@@ -122,12 +122,16 @@
         var date = new Date();
         if (date.getMonth() == 1) date.setMonth(2);
 
+        console.log(date);
+
         // Set nextMeet day or override with value at top if necessary
         var nextMeet = new Date(date.getFullYear(), date.getMonth(), 1);
         if(overrideDay>0)
             nextMeet.setDate(overrideDay);
         else
             nextMeet.setDate(7-nextMeet.getDay());
+
+        console.log(nextMeet);
 
         // If we are past this months meet, increase month before getting meet date again
         if(date > nextMeet)
@@ -137,6 +141,8 @@
                 date.setFullYear(nextMeet.getFullYear()+1, 2, date.getDate());
         
         nextMeet.setFullYear(date.getFullYear(), date.getMonth(), 1);
+
+        console.log(nextMeet);
     
         if(overrideDay>0)
             nextMeet.setDate(overrideDay);
