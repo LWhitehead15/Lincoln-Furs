@@ -132,8 +132,6 @@
         else
             nextMeet.setDate(7-nextMeet.getDay());
 
-        console.log(nextMeet);
-
         // If we are past this months meet, increase month before getting meet date again
         if(date > nextMeet)
             if(date.getMonth() <= 10)
@@ -142,19 +140,15 @@
                 date.setFullYear(nextMeet.getFullYear()+1, 2, date.getDate());
         
         nextMeet.setFullYear(date.getFullYear(), date.getMonth(), 1);
-
-        console.log(nextMeet);
     
         if(overrideDay>0)
             nextMeet.setDate(overrideDay);
         else
             nextMeet.setDate(7-nextMeet.getDay());
-
-        console.log(nextMeet);
         
-        if(nextMeet.getDay()==1) var dayEnd = "st";
-        else if (nextMeet.getDay()==2) var dayEnd = "nd";
-        else if (nextMeet.getDay()==3) var dayEnd = "rd";
+        if(nextMeet.getDay()==0) var dayEnd = "st";
+        else if (nextMeet.getDay()==1) var dayEnd = "nd";
+        else if (nextMeet.getDay()==2) var dayEnd = "rd";
         else var dayEnd = "th";
         
         box.innerHTML = `<p id="nextMeet" style="margin: 0px">Upcoming meet: ` + nextMeet.getDate() + dayEnd + ' ' + month[nextMeet.getMonth()] + `</p>`;
