@@ -120,12 +120,15 @@
         var month = [ "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"];
         var date = new Date();
+        
+        console.log(date);
+        
         if (date.getMonth() == 0)
             date.setMonth(1);
 
-        console.log(date.getMonth());
-
         console.log(date);
+
+        console.log(date.getMonth());
 
         // Set nextMeet day or override with value at top if necessary
         var nextMeet = new Date(date.getFullYear(), date.getMonth(), 1);
