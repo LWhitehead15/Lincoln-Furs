@@ -112,43 +112,35 @@
     Upcoming meet: Unknown or JS error</p>
       
     <script>
-        // CHANGE THIS TO THE DAY NUMBER OF IRREGULAR MEET
-        let overrideDay = 0;
-
-        // Define variables and create new date that skips january
+        let overrideDay = 9;
+        
         let box = document.getElementById('nextMeet');
         var month = [ "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"];
         var date = new Date();
+        if (date.getMonth() == 0) date.setMonth(1);
 
-        // If it is Jan, set it to Feb 1st
-        if (date.getMonth() == 0)
-            date = new Date(date.getFullYear(), date.getMonth()+1, 1);
-
-        // Set nextMeet day or override with value at the top if necessary
         var nextMeet = new Date(date.getFullYear(), date.getMonth(), 1);
         if(overrideDay>0)
             nextMeet.setDate(overrideDay);
         else
             nextMeet.setDate(7-nextMeet.getDay());
 
-        // If we are past this months meet, increase month before getting meet date again
         if(date > nextMeet)
             if(date.getMonth() <= 10)
-                date.setMonth(nextMeet.getMonth()+1);
-            else if(date.getMonth() == 12)
-                date.setFullYear(nextMeet.getFullYear()+1, 2, date.getDate());
-        
-        nextMeet.setFullYear(date.getFullYear(), date.getMonth(), 1);
-    
+                date.setMonth(nextMeet.getMonth()+1)
+            else if(date.getMonth() == 11)
+                date.setFullYear(nextMeet.getFullYear()+1, 1, date.getDate())
+
+        nextMeet = new Date(date.getFullYear(), date.getMonth(), 1);
         if(overrideDay>0)
             nextMeet.setDate(overrideDay);
         else
             nextMeet.setDate(7-nextMeet.getDay());
         
-        if(nextMeet.getDate()==1) var dayEnd = "st";
-        else if (nextMeet.getDate()==2) var dayEnd = "nd";
-        else if (nextMeet.getDate()==3) var dayEnd = "rd";
+        if(nextMeet.getDay()==1) var dayEnd = "st";
+        else if (nextMeet.getDay()==2) var dayEnd = "nd";
+        else if (nextMeet.getDay()==3) var dayEnd = "rd";
         else var dayEnd = "th";
         
         box.innerHTML = `<p id="nextMeet" style="margin: 0px">Upcoming meet: ` + nextMeet.getDate() + dayEnd + ' ' + month[nextMeet.getMonth()] + `</p>`;
@@ -159,11 +151,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-6 col-xxl-4 p-4 text-center my-auto">
             <h1>Welcome to Lincoln Furs!</h1>
-            <p>Based in Lincoln (UK), we host monthly meets almost all year for those with a flair for the anthropomorphic.
-            Whether new to the fandom or a veteran, we hope you can find a place in our community.
-            We aim to maintain a safe and supportive environment where you can meet new friends and share your interests.
-            Check out our meets schedule page for this year's plan, and take a peek at our social platforms for easy ways to get involved.
-            </p>
+            <p>Based in Lincoln UK, we are a community of geeks, nerds, creators and anthropomorphic enthusiasts.</p> <p>Our monthly meets attract people from all over the Midlands. Each meet occurring at a different venue, which helps bring variety to our yearly calendar.</p>
             
             <div class="row mx-auto col-12">
                 <div class="d-grid gap-2 col-md-6 p-2">
@@ -209,7 +197,7 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-lg-3">
             <div class="col">
-                <p class="text-muted my-2" style="font-weight: 700;font-size: 18px;">@ Lincoln Furs 2024</p>
+                <p class="text-muted my-2" style="font-weight: 700;font-size: 18px;">@ Lincoln Furs 2025</p>
             </div>
             <div class="col">
                 <ul class="list-inline mt-2">
