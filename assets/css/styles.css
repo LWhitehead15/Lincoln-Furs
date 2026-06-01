@@ -131,3 +131,69 @@ footer {
   margin-top: auto;
 }
 
+/* STAFF PAGE */
+.staff-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+  font-family: Montserrat;
+  box-shadow: 0 4px 15px rgba(0,0,0,.08);
+  transition: all .25s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
+.staff-avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 4px solid #f2f2f2;
+}
+
+.staff-card h4 {
+  font-weight: 700;
+  margin-bottom: .25rem;
+  color: #222;
+}
+
+.staff-role {
+  color: #e01713;
+  font-weight: 600;
+  margin-bottom: .35rem;
+}
+
+.staff-pronouns {
+  color: #666;
+  font-size: .95rem;
+  margin-bottom: 1rem;
+}
+
+.staff-bio {
+  font-size: .95rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 0;
+}
+
+.staff-card a {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .staff-card {
+    padding: 1.5rem;
+  }
+
+  .staff-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
